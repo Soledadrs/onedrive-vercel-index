@@ -14,7 +14,7 @@ module.exports = {
   icon: '/icons/1500.png',
 
   // The name of your website. Present alongside your icon.
-  title: "Arley's OneDrive",
+  title: "Arley's Drive",
 
   // The folder that you are to share publicly with onedrive-vercel-index. Use '/' if you want to share your root folder.
   baseDirectory: '/',
