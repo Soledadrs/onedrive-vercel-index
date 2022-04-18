@@ -1,6 +1,5 @@
 import '../styles/globals.css'
 import '../styles/markdown-github.css'
-
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
   faFileImage,
@@ -123,42 +122,3 @@ function MyApp({ Component, pageProps }: AppProps) {
   )
 }
 export default appWithTranslation(MyApp)
-
-
-
-import React from 'react';
-import { Head } from 'next/document';
-
-function MyApp({ Component, pageProps }) {
-
-  const getAnalyticsTag = () => {
-    return {
-      __html: `
-      var _hmt = _hmt || [];
-      (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?0fb176734ae50475c9398222c2aa3e03";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-      })();`,
-    }
-  }
-
-  return (
-    <>
-      <Head>
-        <script dangerouslySetInnerHTML={getAnalyticsTag()}/>
-      </Head>
-      <Component {...pageProps} />
-    </>
-  )
-}
-
-export default MyApp;
-
-import { Router } from 'next/router';
-Router.events.on('routeChangeComplete', (url) => {
-  try{
-    window._hmt.push(['_trackPageview', url]);
-  }catch (e){}
-})
